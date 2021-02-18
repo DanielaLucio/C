@@ -11,5 +11,5 @@
      printf("%4d %7.2f\n", fahr,  (5.0/9.0)*(fahr - 32));
 
 
- return 0
+ return 0;
  }
