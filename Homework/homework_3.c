@@ -40,7 +40,7 @@ int main (){
 
 
     if (!isdigit(c))//if is not a number
-        sw2=0;//sw=0
+        sw2=0;
 
     if (c==')')//everytime we see the contrapart of our parenthesis sw will restart
         sw=0;
