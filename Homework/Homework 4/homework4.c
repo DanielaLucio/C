@@ -22,7 +22,8 @@ main()
     sw2=0;
     sw3=0;
     swnum=0;
-
+    
+    printf ("Start here:\n");
     while ((type = getop(s)) != EOF) {
 
         switch (type) {
