@@ -338,4 +338,4 @@ void SumVar(char var1)
             val[sp++]= 0;
 }
 
-    /*references from The C programming Language Kernighan
+    /*references from The C programming Language Kernighan*/
