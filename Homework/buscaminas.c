@@ -150,8 +150,11 @@ int main (int argc, char**args){
       printf("Ya has abierto esta casilla\n");
     } else if (status == ERROR_MINE_FOUND) {
       printf("Has perdido\n");
-       show (matrix, DIM);
-      for (i=0; i<DIM; i++){
+       showcompletematrix(matrix);}}
+
+     /*  show (matrix, DIM);
+
+     for (i=0; i<DIM; i++){
          free (matrix[i]);
          free (another[i]);
     }
@@ -159,7 +162,7 @@ int main (int argc, char**args){
       free (another);
 
 
-    }
+
   }
 
 
@@ -174,8 +177,9 @@ int main (int argc, char**args){
          free (another[i]);
     }
     free (matrix);
-    free (another);
+    free (another);*/
     return 1;
+
 
 
 }
@@ -183,9 +187,9 @@ int OpenCell(int** m, int** a,int r, int c){
 
 
     //c = toupper(c);
-  // Restamos 1 porque usamos la columna como índice
+  // Restamos 1 porque usamos la columna como Ã­ndice
     r--;
-  // Convertimos la letra a índice
+  // Convertimos la letra a Ã­ndice
   int col = c-1;
 
   //assert(r < DIM && r >= 0);
@@ -216,6 +220,45 @@ int almostwon(int**a ) {
     }
   }
   return 1;
+}
+void showcompletematrix(int** m)  {
+  int i, j,c;
+  int w=1;
+
+  printf("   ");
+  for (i = 0; i < DIM; i++) {
+     c=i+1;
+    printf ("   %i", c);
+  }
+  printf("\n");
+
+  printf(" 1 ");
+  for (i = 0; i < DIM; i++) {
+
+    for (j = 0; j < DIM; j++) {
+      if (m[i][j]!=-1){
+      if (m[i][j]!=0){
+      printf(" %3d", m[i][j]);
+      }
+      else{
+          ////////////////////////////
+          printf("    ");
+      }
+      }
+      else{
+          printf("   *");
+      }
+    }
+    printf("\n");
+    w++;
+    if (w<=DIM){
+    printf("%2d ", w);
+    }
+  }
+   for (i = 0; i < (DIM*4+4); i++) {
+  printf("-");
+   }
+   printf("\n");
 }
 void DisplayTable(int** m, int** a){
     int i,j,r;
@@ -256,4 +299,3 @@ void DisplayTable(int** m, int** a){
    }
    printf("\n");
 }
-
