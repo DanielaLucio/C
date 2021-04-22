@@ -109,13 +109,12 @@ int main (int argc, char**args){
     int gcol;
     int status;
     int grow;
-    printf("Ingresa la fila: ");
+    printf("Enter row: ");
     scanf(" %d", &grow);
-    printf("Ingresa la columna: ");
+    printf("Enter column: ");
     scanf("%d", &gcol);
 
     status = OpenCell(matrix, another,grow,gcol);
-    printf("Salio Opencell %i\n", status);
     if (almostwon(another)) {
       printf("You have won, Congrats!!\n");
       show (matrix, DIM);
@@ -127,9 +126,9 @@ int main (int argc, char**args){
       free (another);
 
     } else if (status == ALREDY_COORD) {//if you repeat
-      printf("Ya has abierto esta casilla\n");
+      printf("Alredy opened cell\n");
     } else if (status == ERROR_MINE_FOUND) {
-                printf("Has perdido\n");
+                printf("You have lost\n");
                 showcompletematrix(another);
                 mineshow = 1;
                 }
