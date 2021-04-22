@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include<stdlib.h>
 #include "calc.h"
@@ -176,18 +175,7 @@ int almostwon(int**a ) {
   }
   return 1;
 }
-void showcompletematrix(int** a)  {
-  int i, j,c;
-  int w=1;
 
-  printf("   ");
-    for (i = 0; i < DIM; i++) {
-
-        for (j = 0; j < DIM; j++) {
-            a[i][j]=1;
-        }
-    }
-}
 void DisplayTable(int** m, int** a,int ms){
     int i,j,r;
     int col;
@@ -219,10 +207,7 @@ void DisplayTable(int** m, int** a,int ms){
                     printf("   #");
                     }
             }
-           /*if (m[i][j]==0 && a[i][j]==1){
-                if (i<DIM)
-                blanks=m[i+1][j]= m[i+1][j];
-                printf("  %3d",blanks);}*/}
+          }
     printf("\n");
     r++;
     if (r<=DIM){
@@ -234,4 +219,3 @@ void DisplayTable(int** m, int** a,int ms){
    }
    printf("\n");
 }
-//reference: Raul Chavez-rulgamer/
