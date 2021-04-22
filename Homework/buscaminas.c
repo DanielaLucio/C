@@ -71,8 +71,8 @@ int main (int argc, char**args){
         printf("Entrando a poner numeros 1 2 3\n");
     for (i=0;i<DIM;i++){
         for (j=0;j<DIM;j++){
-                        printf("i1=%i\n",i);
-                        printf("j1=%i\n",j);
+                     //   printf("i1=%i\n",i);
+                     //   printf("j1=%i\n",j);
             if (matrix[i][j]==MINE){
                // printf("Encuentra mina\n");
                 if (i>0 ){
@@ -118,10 +118,10 @@ int main (int argc, char**args){
             }
         }
     }
-    printf("entra a while sale de nums\n");
+    //printf("entra a while sale de nums\n");
 
     while (1){
-       DisplayTable(matrix,another) ;
+       DisplayTable(matrix,another,mineshow) ;
 
      if (mineshow) {
       break;
@@ -149,31 +149,24 @@ int main (int argc, char**args){
     } else if (status == ALREDY_COORD) {
       printf("Ya has abierto esta casilla\n");
     } else if (status == ERROR_MINE_FOUND) {
-      printf("Has perdido\n");
-       showcompletematrix(matrix);}}
+                printf("Has perdido\n");
+                showcompletematrix(another);
+                mineshow = 1;
+                }
+       }
 
      /*  show (matrix, DIM);
-
      for (i=0; i<DIM; i++){
          free (matrix[i]);
          free (another[i]);
     }
       free (matrix);
       free (another);
-
-
-
   }
-
-
-
-
-
     show (matrix, DIM);
     //show(another, DIM);
     for (i=0; i<DIM; i++){
          free (matrix[i]);
-
          free (another[i]);
     }
     free (matrix);
@@ -221,46 +214,19 @@ int almostwon(int**a ) {
   }
   return 1;
 }
-void showcompletematrix(int** m)  {
+void showcompletematrix(int** a)  {
   int i, j,c;
   int w=1;
 
   printf("   ");
-  for (i = 0; i < DIM; i++) {
-     c=i+1;
-    printf ("   %i", c);
-  }
-  printf("\n");
+    for (i = 0; i < DIM; i++) {
 
-  printf(" 1 ");
-  for (i = 0; i < DIM; i++) {
-
-    for (j = 0; j < DIM; j++) {
-      if (m[i][j]!=-1){
-      if (m[i][j]!=0){
-      printf(" %3d", m[i][j]);
-      }
-      else{
-          ////////////////////////////
-          printf("    ");
-      }
-      }
-      else{
-          printf("   *");
-      }
+        for (j = 0; j < DIM; j++) {
+            a[i][j]=1;
+        }
     }
-    printf("\n");
-    w++;
-    if (w<=DIM){
-    printf("%2d ", w);
-    }
-  }
-   for (i = 0; i < (DIM*4+4); i++) {
-  printf("-");
-   }
-   printf("\n");
 }
-void DisplayTable(int** m, int** a){
+void DisplayTable(int** m, int** a,int ms){
     int i,j,r;
     int col;
     printf("Entro Display \n");
@@ -278,14 +244,17 @@ void DisplayTable(int** m, int** a){
             if (m[i][j]!=-1&&a[i][j]==1){//cada que mande ua coord another=1
                 if (m[i][j]!=0){
 
-                printf(" %3d", m[i][j]);
+                    printf(" %3d", m[i][j]);
                 }
                 else{
                     printf("    ");
                 }
             }
-            else{
-                printf("   #");
+            else{if (ms){
+                    printf("   *");
+                    }else{
+                    printf("   #");
+                    }
             }
         }
     printf("\n");
