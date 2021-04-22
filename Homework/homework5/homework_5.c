@@ -1,3 +1,8 @@
+/*Como compilar en codigo? 
+1-Si usas el gdb compiler (opcion más viable) ingresa este codigo que es el main.c, despues de eso puedes ingresar cualquiera de los otros 
+de cualquier manera con su reespectivo nombre
+Primero te pedira el numero de minas el cual puede ser menor a 80*/
+
 #include <stdio.h>
 #include<stdlib.h>
 #include "calc.h"
