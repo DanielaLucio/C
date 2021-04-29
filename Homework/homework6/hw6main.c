@@ -1,15 +1,15 @@
 #include<stdio.h>
 #include<ctype.h>
 #include<stdlib.h>
-#include"help.h"
+#include"archivo.h"
 #define MAX 100
 
 main() {
   printf("--------------------------------------------------------------------------------------\n");
   printf("-   Welcome                                                                          -\n");
   printf("-   if you want to add a user use add and write user & password                      -\n");
-  printf("-   if you want to delate a user use del and write the user & password               -\n");
-  printf("-   For the alphabetic view write view, for other view write viewtree                -\n");
+  printf("-   if you want to delate a user use del and write the user & password (user>4)      -\n");
+  printf("-   For the alphabetic view write view                                               -\n");
   printf("--------------------------------------------------------------------------------------\n\n");
 
 	node* n = NULL;
@@ -41,11 +41,10 @@ main() {
 				tree = n;
 			view(tree);
 		}
-		else if (strstr(count, "del")){
-		    countspace=0;
-		    if (countspace==2){
-			printf("user delate");}
-			else printf("it didnt erase");}
+		else if (strstr(count, "del"))
+		   
+			printf("user delate");
+			
 			
 	  else if (strstr(count, "view") != NULL){//when we find view
       
@@ -109,3 +108,12 @@ int getdata(char *user, char *line) {
 	user[i] = '\0';
 		return i;
 }
+void del(node* position) {
+	
+	if (position != NULL) {
+    printf("the user is deleated", position->username, position->password);
+    printf("\n");
+	return;
+}
+}
+//references Toño Cortes, Maria Jose Diaz Chavez, Rogelio Salinas, Dr Satu Elisa
