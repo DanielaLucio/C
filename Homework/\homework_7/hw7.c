@@ -1,4 +1,6 @@
- #include "archivo.h"
+//references and collaborations from: Dr.Satu Elisa, Raul Chavez & Abner
+
+#include "archivo.h"
 
 int main() {
   int cycle=0;
@@ -272,4 +274,4 @@ void copy (char temp[], int i){
     strcpy(trab[i].fecha,temp);
     
 }*/
-//references from: Dr.Satu Elisa, Raul Chavez & Abner
+//references and collaborations from: Dr.Satu Elisa, Raul Chavez & Abner
