@@ -35,7 +35,7 @@ int main() {
          cycle=1;
     }
     
-    */ if (option==5){
+    /* if (option==5){
      reports();
        
     }*/
