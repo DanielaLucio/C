@@ -5,19 +5,18 @@
 #define UNAME 8
 #define Work 13
 #define MAX 100
- typedef struct{
+/* typedef struct{
      int pin;
      int entrada_salida;
      char *fecha;
      char *hora;
      int mes;
  }workers;
- workers *trab;
+ workers *trab;*/
  
  void pin_registration();
  void attendance_list(int t);
  void timecome(int pin, char t);
  int difftimes(int pin);
- void reports();
- void copy (char temp[], int i);
+ 
  
