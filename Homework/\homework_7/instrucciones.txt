@@ -1,0 +1,12 @@
+Hola Para compilar este programa lo que tienes que hacer es:
+1 usa  de preferencia el compilador gdb 
+
+2 ingresa el main y el archivo.h y luego crea archivos con los nombres "trabajadores.txt" "attendance.txt" y "reporte.txt" estos vienen en la zona de archivos de la tarea 7
+
+3 Actualmente yo puse un usuario en los archivos, tu puedes o borrar ese usuario o crear otro, si quieres crear uno nuevo pon 1 y te dara el pin numero 2 debido 
+debido a que eres ese trabajador, si quieres crear desde 0, solo borra todo lo que hay en los archivos y crea un usuario que te dara el pin=1
+
+4 La 'i' de attendance significa que vas llegando y la 'o' que es tu salida
+
+6 recuerda seguir cada instruccion que marca
+
