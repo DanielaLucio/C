@@ -1,0 +1,275 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#define UNAME 8
+#define Work 13
+#define MAX 100
+#define NAMEARCHIVE "workers.bin"
+ 
+ typedef struct{
+     int pin;
+     int entrada_salida;
+     char *fecha;
+     char *hora;
+ }workers;
+ workers *trab;
+ 
+ int** matrix;
+int main() {
+  int cycle=0;
+  int k, i = 0;
+  //char pin[UNAME + 1]; 
+  //char pin2[UNAME + 1]; 
+  char actual, nombre;
+  char trabajador[Work + 1];//programa educativo
+  int option;
+  //char number[ID + 1];
+  while (cycle==0){
+  printf ("--------------------------------------------------------------\n");
+  printf ("| Hello welcome to assistance program what do you want to do? |\n");
+  printf ("| 1 Add new worker                                            |\n");
+  printf ("| 2 register attendance                                       |\n");
+  printf ("| 3 register exit                                             |\n");
+  printf ("| 4 reports                                                   |\n");
+  printf ("| 5 exit program                                              |\n");
+  printf ("--------------------------------------------------------------\n");
+  scanf ("%d",&option);
+  
+    if (option==1){
+      pin_registration();
+       //printf("confirmacion de nombre %s", nombre);
+     }
+    if (option==2){
+      attendance_list(1);
+       
+    }
+   
+    if (option==3){
+      attendance_list(2);
+       
+    }
+    
+     if (option==4){
+        reports();
+    }
+    
+     if (option==5){
+      cycle=1;
+       
+    }
+  }
+       
+    
+    return 0;  
+ }
+  
+   void pin_registration(){
+       FILE* entrada = fopen("trabajadores.txt", "r");
+       char* name;
+       int mon,tues,wend,thur,fri,sat,sun;
+       char* enter;
+       char* exits;
+       char namear [20];
+       int PIN [MAX];
+       int i=1;
+       int pin_count=0;
+       //char**
+       printf ("add your name:");
+       scanf("%s",&name);
+       printf ("capture your working days \n");
+       printf("Mon, 1=si 0 = No: "); 
+       scanf("%i",&mon);
+       printf("tuesday, 1=si 0 = No:  ");
+        scanf("%i",&tues);
+       printf("Wends, 1=si 0 = No:  ");
+       scanf("%i",&wend);
+       printf("thursday, 1=si 0 = No: ");
+       scanf("%i",&thur);
+       printf("Friday, 1=si 0 = No: ");
+       scanf("%i",&fri);
+       printf("saturday, 1=si 0 = No:  ");
+       scanf("%i",&sat);
+       printf("Sun, 1=si 0 = No: ");
+       scanf("%i",&sun);
+      
+      printf("add your enter hour: ");
+       scanf("%s",&enter);
+       printf ("add your exit hours: ");
+       scanf("%s",&exits);
+       printf("Entro while\n");
+       
+       while (feof(entrada)==0) { // expression (a)
+        if ((fgetc(entrada))=='\n') { // expression (b)
+        pin_count++;
+
+    }
+    } 
+    pin_count++;
+    printf("your pin is: %d ", pin_count);
+
+        printf("SALIO while\n");
+        fclose(entrada);
+        FILE* escritura = fopen("trabajadores.txt", "a");
+       
+       fprintf(escritura,"%i- %s- %i %i %i %i %i %i %i- %s %s  \n",pin_count++, &name, mon, tues, wend, thur, fri, sat, sun,&enter, &exits);
+      //pin_count->pin; 
+      fclose(escritura);
+   }
+  
+    void attendance_list(int t){
+    int pin2,pinadd; 
+    int pin_count=0;
+
+    
+  
+    printf ("Enter your PIN: ");
+   // printf ("%i",pinadd);
+    scanf("%i", &pinadd);
+    //pinadd = 3;
+  //  printf ("%i",pinadd);
+    //printf("entro while");
+    FILE* checa_pin = fopen("trabajadores.txt", "r");
+    while (feof(checa_pin)==0) { // expression (a)
+        if ((fgetc(checa_pin))=='\n') { // expression (b)
+        pin_count++;
+        
+        }
+    }
+    fclose(checa_pin);
+    printf("%i %i \n",pinadd, pin_count);
+   printf("por entrar if \n");
+    if (pinadd<=pin_count){
+            printf("%i \n",pin_count);
+        timecome(pinadd, t);
+    }
+    printf("paso if\n");
+    
+
+    }
+    
+    void timecome(int pin, int t){///estado es es 0 es entrada 1 salida
+    printf("entro a timecome\n");
+    time_t timeac;
+    time(&timeac);
+    struct tm *timer = localtime(&timeac);
+    int sega=timer->tm_sec;
+    int mina=timer->tm_min;
+    int houra=timer->tm_hour;
+    int yeara=timer->tm_year+1900;
+    int montha=timer->tm_mon+1;
+    int daya=timer->tm_mday;
+    int wdaya=timer->tm_wday;
+   // printf ("%d %d %d",daya,montha,yeara);
+    //if (estado==0){ //es una entrada
+    FILE* captor = fopen("attendance.txt", "a");
+    fprintf(captor, "%d %d %d %d/%d/%d %d:%d:%d\n", pin, t, wdaya, daya, montha, yeara, houra, mina, sega);
+    fclose(captor);
+    if (t==1){
+     printf("welcome your entry have been register\n");}
+    if (t==2){
+        FILE* report= fopen("reporte.txt","a");
+    }
+    else 
+        printf("Your exit have been register\n");
+    
+  
+}
+   void reports(){
+    char aux;
+    char temp [50];
+    int cont=0;
+    int i, j;
+    int sec, min, hora,year, dia, wdia, pin, ent_ex, mes;
+    char fecreg[8];
+    char horareg[8];
+    int day_get;
+    int month_get;
+    int year_get;
+      time_t timeac;
+      time(&timeac);
+         struct tm *timer = localtime(&timeac);
+        int actualsec=timer->tm_sec;
+        int actualmin=timer->tm_min;
+        int actualhora=timer->tm_hour;
+        int actualyear=timer->tm_year+1900;
+        int actalmes=timer->tm_mon+1;
+        int actualdia=timer->tm_mday;
+        int actualwdia=timer->tm_wday;
+        
+      
+      //FILE* report= fopen("reporte.txt","w");
+      // printf("From what date do you want the report\n");
+      // printf("Write it as: 5 5 2021:\n");
+       //scanf ("%i %i %i", &day_get, &month_get, &year_get);
+    //  printf ("%i %i %i\n", day_get, month_get, year_get);
+     
+       /*  actualdia==day_get;
+         month_get==actualmes;
+         year_get==actualyear;
+         printf("%d %d %d\n", actualdia, actualmes, actualyear);*/
+      
+     FILE* at=fopen("attendance.txt","r"); 
+     if (at==NULL){
+         printf("No se pudo abrir F :(");
+         exit(1);
+        
+     }
+     while(!feof(at)){
+         fgets(temp,50,at);
+         cont++;
+     }
+     rewind(at);
+     
+     trab=(workers*)malloc(cont*sizeof(workers));
+     if (trab==NULL){
+         printf("Sth went wrong in memory sorry boy :(");
+         exit(1);
+     }
+     for (i=0;!feof(at);i++);{
+         empty();
+         aux='0';
+         for (j=0;aux!=' ';j++){
+             aux= fgetc(at);
+             if (aux!=' '){
+                 temp[j]= aux;
+             }
+         }
+         copy(temp,i);
+         
+         fgets(temp,3,at);
+         trab[i].entrada_salida;
+         printf("pin %i",trab[i].pin);
+     }
+     
+     
+      
+      //printf("%d %d\n", day_get, dia);}
+      //printf("%d %d\n", month_get, mes);
+      //printf("%d %d\n", year_get, year);}
+      //if (day_get==dia && month_get==mes &&year_get==year){
+       //fprintf(report,"%d %d %d %d %d %d: %d: %d:\n", pin, ent_ex, dia, mes, year , hora, min, sec);}
+      // printf("%d %d %s %s\n", pin, ent_ex, fecreg , horareg);
+       //fclose(at);   
+      
+          
+}
+
+void empty(char temp[]){
+    int i;
+    for (i=0; i<50;i++){
+        temp [i]='\0';
+    }
+    
+}
+void copy (char temp[], int i){
+    int n=strlen(temp)+1;
+    trab [i].pin=(char*)malloc (n*sizeof(char));
+    if (trab[i].pin==NULL){
+        printf("No se pudo reservar memoria :(\n");
+        exit(1);
+    }
+    strcpy(trab[i].pin,temp);
+}
+      
+   
+
