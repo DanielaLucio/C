@@ -1,3 +1,4 @@
+  
 
 #include "archivo.h"
 
@@ -117,7 +118,8 @@ int main() {
 
     if (pinadd<=pin_count){//check if pin exists
             timecome(pinadd, t);
-    }
+    }else 
+    printf("This pin does not exist sorry bro:(\n");
 
     
 
