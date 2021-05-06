@@ -1,6 +1,4 @@
-  
-
-#include "archivo.h"
+ #include "archivo.h"
 
 int main() {
   int cycle=0;
@@ -38,7 +36,7 @@ int main() {
     /* if (option==5){
      reports();
        
-    }*/
+    */
   }
        
     
@@ -183,7 +181,7 @@ int difftimes(int pin) {
     fclose(diff);
     return diftimer;
 }
-
+/*
    void reports(){
     char aux;
     char temp [50];
@@ -273,5 +271,5 @@ void copy (char temp[], int i){
    
     strcpy(trab[i].fecha,temp);
     
-}
+}*/
 //references from: Dr.Satu Elisa, Raul Chavez & Abner
