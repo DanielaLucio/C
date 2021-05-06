@@ -45,7 +45,7 @@ int main() {
     return 0;  
  }
   
-   void pin_registration(){
+   void pin_registration(){//take data of new workers
        
        FILE* entrada = fopen("trabajadores.txt", "r");
        char* name;
@@ -71,7 +71,7 @@ int main() {
        scanf("%i",&fri);
        printf("saturday, 1=si 0 = No:  ");
        scanf("%i",&sat);
-       printf("Sun, 1=si 0 = No: ");
+       printf("Sunday, 1=si 0 = No: ");
        scanf("%i",&sun);
       
        printf("add your enter hour\n ");
@@ -92,7 +92,7 @@ int main() {
     printf("This info have been storage in trabajadores file\n");
 
     fclose(entrada);
-    FILE* escritura = fopen("trabajadores.txt", "a");
+    FILE* escritura = fopen("trabajadores.txt", "a");//a will print and not erase the info
        
     fprintf(escritura,"%i- %s- %i %i %i %i %i %i %i- %s %s  \n",pin_count++, &name, mon, tues, wend, thur, fri, sat, sun,&enter, &exits);
       fclose(escritura);
@@ -116,7 +116,7 @@ int main() {
     }
     fclose(checa_pin);
 
-    if (pinadd<=pin_count){
+    if (pinadd<=pin_count){//check if pin exists
             timecome(pinadd, t);
     }
 
@@ -140,10 +140,10 @@ int main() {
     FILE* captor = fopen("attendance.txt", "a");
     fprintf(captor, "%c%d %lu %d %d/%d/%d %d:%d:%d\n",t, pin, (unsigned long)time(NULL),wdaya,  daya, montha, yeara,houra, mina, sega);
     fclose(captor);
-    if (t=='i'){
+    if (t=='i'){//i means entry
      printf("welcome your entry have been register\n");}
      
-    if (t=='o'){
+    if (t=='o'){//o output
        
         printf("Goodbye your exit have been compleate\n") ;
         
@@ -273,3 +273,4 @@ void copy (char temp[], int i){
     strcpy(trab[i].fecha,temp);
     
 }
+//references from: Dr.Satu Elisa, Raul Chavez & Abner
