@@ -5,9 +5,8 @@ int main() {
   int cycle=0;
   int k, i = 0;
   char actual, nombre;
-  char trabajador[Work + 1];//programa educativo
+  char trabajador[Work + 1];
   int option;
-  //char number[ID + 1];
   while (cycle==0){
   printf ("--------------------------------------------------------------\n");
   printf ("| Hello welcome to assistance program what do you want to do? |\n");
