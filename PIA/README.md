@@ -25,6 +25,7 @@ Our information will be storage in different files.  The first file will be:
 3-9090-S
 ```
 *amount.txt
+
 *
 ```c
 1-100
