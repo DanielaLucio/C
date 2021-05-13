@@ -55,20 +55,16 @@ Code Blocks (View):
 	 -------------------------------------------------------------- 
 ##### Balance 
 What balance is going to show us the amount of money that we still have after cash withdrawals and cash deposites.
+
 ##### Cash Withdrawal
 Cash Withdrawal what is going to do is that first will give us some options about how much money we want to withdrawal, after choose our quantity the program is going to verify if we have the credit to do this withdrawl, if not it will mark error if yes, this amount will be substracted from our amount.txt file.
+
 #####Change of nip
-When we chose this option the atm is going to ask us for a re-confirmation of account number and nip, this to verify that the owner is doing this, if this coincide the atm will ask you to compute a new 4-digit nip and this will be change in the file of client_info.txt
+When we chose this option the atm is going to ask us for a re-confirmation of account number and nip, this to verify that the owner is doing this, if this coincide the atm will ask you to compute a new 4-digit nip and this will be change in the file of client_info.txt.
+
 #####Cash Deposite
 Cash Deposite what is going to do is that first will ask us to the account of who we want to deposite then this will give us some options about how much money we want to deposite after choose our quantity the program is going to verify if we have the credit to do this deposite, if not it will mark error if yes, this amount will be substracted from our amount.txt file. and add this quantity to the account of the person we deposited.
 
-###Sequence Diagram
-                    
-```seq
-Andrew->China: Says Hello 
-Note right of China: China thinks\nabout it 
-China-->Andrew: How are you? 
-Andrew->>China: I am good thanks!
-```
+
 
 ###End
