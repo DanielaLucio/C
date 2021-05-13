@@ -23,15 +23,13 @@ Our information will be storage in different files.  The first file will be:
 2-8899-N
 3-9090-S
 ```
-*amount.txt
-*
+*amount.txt*
 ```c
 1-100
 2-1050
 3-1030
 ```
-*cashier_suply.txt
-*
+*cashier_suply.txt*
 ```c
 100000
 ```
