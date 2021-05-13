@@ -12,7 +12,9 @@ This ATM Bank will count with the next functions
 Our information will be storage in different files.  The first file will be:
 
 **client_info.txt**- As the name says this file will storage the account number, nip and status of our client (the status is if the account is activate or not), an other thing is that from here we will change our nip.
+
 **amount.txt**- This is very important because here we will get our final credit, from here we are going to substract, add and verify our actual credit after all the alterations we have made.
+
 **cashier_suply.txt**- This is going to tell us the amount of money that the atm bank has to provide. Every time we make a cash withdrawal the amount of this will be substracted from the amount storage in this file.
 
 ### ATM SEQUENCE
