@@ -17,8 +17,7 @@ Our information will be storage in different files.  The first file will be:
 
 **cashier_suply.txt**- This is going to tell us the amount of money that the atm bank has to provide. Every time we make a cash withdrawal the amount of this will be substracted from the amount storage in this file.
 
-*client_info.txt
-*
+*client_info.txt*
 ```c
 1-7718-S
 2-8899-N
