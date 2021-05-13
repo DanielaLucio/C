@@ -1,7 +1,7 @@
 # Project Title: ATM BANK
 This will be a program that will make the functions of an ATM BANK using 
 the c language 
-##ATM FUNCTIONS
+## ATM FUNCTIONS
 This ATM Bank will count with the next functions
 - Balance
 - Cash withdrawal
@@ -9,7 +9,7 @@ This ATM Bank will count with the next functions
 - Cash deposite
 
 ### ATM FILES 
-Our information will be storage in different files.  The first file will be:
+Our information will be storage in different files:
 
 **client_info.txt**- As the name says this file will storage the account number, nip and status of our client (the status is if the account is activate or not), an other thing is that from here we will change our nip.
 
