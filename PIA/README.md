@@ -17,6 +17,26 @@ Our information will be storage in different files.  The first file will be:
 
 **cashier_suply.txt**- This is going to tell us the amount of money that the atm bank has to provide. Every time we make a cash withdrawal the amount of this will be substracted from the amount storage in this file.
 
+*client_info.txt
+*
+```c
+1-7718-S
+2-8899-N
+3-9090-S
+```
+*amount.txt
+*
+```c
+1-100
+2-1050
+3-1030
+```
+*cashier_suply.txt
+*
+```c
+100000
+```
+
 ### ATM SEQUENCE
 #### START
 1. The program is going to ask for an account number (the account number is unique ), if the account number do not coincides then you will not able to continue.
