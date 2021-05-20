@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include<stdlib.h>
+
 struct client //in this struct I storage the data of clien.txt
 {
   int account [3] ;
