@@ -1,12 +1,13 @@
 # Project Title: ATM BANK
+This will be a program that will make the functions of an ATM BANK using 
+the c language 
 
 ## Link of youtube video
 https://www.youtube.com/watch?v=B52MiyuHglA
 
 ### Link of gdb compiler
+https://onlinegdb.com/cSRE11w7Z
 
-This will be a program that will make the functions of an ATM BANK using 
-the c language 
 ## ATM FUNCTIONS
 This ATM Bank will count with the next functions
 - Balance
