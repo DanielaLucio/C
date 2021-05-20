@@ -3,7 +3,7 @@ This will be a program that will make the functions of an ATM BANK using
 the c language 
 
 ## Link of youtube video
-https://www.youtube.com/watch?v=B52MiyuHglA
+https://www.youtube.com/watch?v=6dnhAzScyt8
 
 ### Link of gdb compiler
 https://onlinegdb.com/C4N8g84NU
