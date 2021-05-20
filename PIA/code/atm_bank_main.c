@@ -156,7 +156,7 @@ int main ()
         fclose(analyze);
         
         FILE* recite = fopen("client.txt", "w");
-        for(j=0; j<i;j++){//j is going to initialized i
+        for(j=0; j<i;j++){//j indicates the value of the array to be modified from the client FILE
         fprintf(recite,"%d %d %d \n", seek.account[j], seek.nip[j], seek.status[j]);
         }
         fclose(recite);
@@ -192,7 +192,7 @@ int main ()
         }  
         fclose(read);
         FILE* caught = fopen("amount.txt","w");
-        for(j=0; j<i;j++){//initialize i
+        for(j=0; j<i;j++){//j indicates the value of the fix to be modified from the account file
        
         fprintf(caught,"%d %d \n", view.account[j], view.amount[j]);
         
@@ -219,7 +219,7 @@ int main ()
             fscanf(dep,"%d %d ",&view.account[i], &view.amount[i]);
             if(view.account[i]==acc){
                  if(view.amount[i]>amount){
-                      view.amount[i]= view.amount[i]-amount;//the account who deposit is going to lose that amount
+                      view.amount[i]= view.amount[i]-amount;//the account who deposited is going to lose that amount
                  }else{
                      printf("You do not have the budget to deposit this amount of money\n\n\n");
                  }
@@ -230,14 +230,14 @@ int main ()
                     printf("Your deposit has been done\n\n\n\n");
                  }
             }
-            i++;//counter i runs to search the account that is depositinng
-            d++;//counter d runs when we are searching for the account where we are going to deposit the amount
+            i++;//counter i search the account that is depositinng
+            d++;//counter d search for the account where we are going to deposit the amount
             count++;
            
          }
         fclose(dep);
         FILE* operation = fopen("amount.txt", "w");
-        for(j=0; j<i&&j<d;j++){
+        for(j=0; j<i&&j<d;j++){//j indicates the value of the fix to be modified from the account file
         fprintf(operation,"%d %d \n", view.account[j], view.amount[j]);
         }
         fclose(operation);
