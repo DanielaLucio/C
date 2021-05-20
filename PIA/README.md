@@ -15,13 +15,12 @@ Our information will be storage in different files:
 
 **amount.txt**- This is very important because here we will get our final credit, from here we are going to substract, add and verify our actual credit after all the alterations we have made.
 
-**cashier_suply.txt**- This is going to tell us the amount of money that the atm bank has to provide. Every time we make a cash withdrawal the amount of this will be substracted from the amount storage in this file.
 
 *client_info.txt*
 ```c
-1-7718-S
-2-8899-N
-3-9090-S
+1-7718-1
+2-8899-0
+3-9090-1
 ```
 *amount.txt*
 ```c
@@ -29,17 +28,14 @@ Our information will be storage in different files:
 2-1050
 3-1030
 ```
-*cashier_suply.txt*
-```c
-100000
-```
+
 
 ### ATM SEQUENCE
 #### START
 1. The program is going to ask for an account number (the account number is unique ), if the account number do not coincides then you will not able to continue.
 1. The program will ask for the nip 
 1. If the account number and the nip coincides then it will go to the main menu
-Note: If the account number and nip do not concides with the client information it will get a message of error, if this error repeats more than 2 times the account will be desactivate.
+Note: If the account number and nip do not concides with the client information it will get a message of error.
 
 ### Main menu 
 A main menu will be display where the atm functions will appear.
@@ -84,6 +80,7 @@ When we chose this option the atm is going to ask us for a re-confirmation of ac
 ##### Cash Deposite
 Cash Deposite what is going to do is that first will ask us to the account of who we want to deposite then this will give us some options about how much money we want to deposite after choose our quantity the program is going to verify if we have the credit to do this deposite, if not it will mark error if yes, this amount will be substracted from our amount.txt file. and add this quantity to the account of the person we deposited.
 
-
+## Link of youtube video
+https://www.youtube.com/watch?v=B52MiyuHglA
 
 ### End
