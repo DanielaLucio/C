@@ -15,7 +15,7 @@ int main ()
   int decision;
    i=0;
    j=0;
-  FILE *conf = fopen ("clien.txt", "r");
+  FILE *conf = fopen ("client.txt", "r");
   if (conf == NULL){
       printf ("no se pudo leer\n");
       exit (1);
@@ -112,7 +112,7 @@ int main ()
         {  
             fscanf(balance,"%d %d ",&view.account[i], &view.amount[i]);
             if(view.account[i]==acc){
-                  printf("The balance of %d is %d \n\n", view.account[i], view.amount[i]);
+                  printf("The balance of %d is %d \n\n\n\n", view.account[i], view.amount[i]);
              }
             
            
@@ -130,7 +130,7 @@ int main ()
         int i,j;
         i=0;
         j=0;
-        FILE* analyze=fopen("clien.txt","r");
+        FILE* analyze=fopen("client.txt","r");
         printf("Enter your 4 digit new nip:");
         scanf("%d",&pin);
         while (!feof (analyze)!=' '&&count<=2)
@@ -138,7 +138,7 @@ int main ()
             fscanf(analyze,"%d %d %d",&seek.account[i], &seek.nip[i], &seek.status[i]);
             if(seek.nip[i]==nip&&seek.account[i]==acc){//if these match then seek.nip will be equal to the new nip
                 seek.nip[i]=pin; 
-                printf("The account number %i your new NIP is :%d \n\n", seek.account[i], seek.nip[i]);
+                printf("The account number %i your new NIP is :%d \n\n\n", seek.account[i], seek.nip[i]);
             }
             
             i++;
@@ -146,7 +146,7 @@ int main ()
         } 
         fclose(analyze);
         
-        FILE* recite = fopen("clien.txt", "w");
+        FILE* recite = fopen("client.txt", "w");
         for(j=0; j<i;j++){//j is going to initialized i
         fprintf(recite,"%d %d %d \n", seek.account[j], seek.nip[j], seek.status[j]);
         }
@@ -170,7 +170,7 @@ int main ()
             if(view.account[i]==acc){
                 view.amount[i]= view.amount[i]-amount;
                 
-                printf("%d you have withdrawal %d \n\n", view.account[i], amount);
+                printf("%d you have withdrawal %d \n\n\n\n", view.account[i], amount);
             }
             
             
@@ -219,6 +219,6 @@ int main ()
         for(j=0; j<i&&j<d;j++){
         fprintf(operation,"%d %d \n", view.account[j], view.amount[j]);
         }
-        printf("Your deposite has been done\n\n");
+        printf("Your deposite has been done\n\n\n\n");
         fclose(operation);
     }
