@@ -19,4 +19,4 @@ int menu();
 void balance(int acc);
 void changepin(int nip, int acc);
 void withdrawal(int acc);
-void deposite(int acc);
+void deposit(int acc);
