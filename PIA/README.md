@@ -86,6 +86,7 @@ When we choose this option the ATM is going to ask us for  a new 4-digit nip and
 ##### Cash Deposit
 Cash Deposit what is going to do is that first will ask us for the amount of money that we want to deposit then the account of who we want to deposite after having chosen our quantity the program is going to verify if we have the credit to do this deposit, if not it will mark error, if yes this amount will be substracted from the person who deposit from our amount.txt file. and, add this quantity to the account of the person was deposited.
 
-
+## References
+Brian W. Kernighan & Dennis M. Ritchie. (1998). The C Programming Language. Canada: Prentice Hall.
 
 ### End
