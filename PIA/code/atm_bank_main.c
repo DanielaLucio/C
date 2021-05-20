@@ -1,8 +1,11 @@
-#include <stdio.h>
+/*How to compile the ATM?
+To compile the ATM you need to do the next steps:
+1- Use the gdb compiler(preferably)
+2-Open the files that are in my repository, preferably by this order: I-atm_bank_main.c, II-archivo.h, III-client.txt, IV- amount.txt
+3- In client.txt the first number is the account number, then the NIP and at last the status
+4-You can use any of the accounts that are on the client.txt with its corresponding nip
+*/
 #include "archivo.h"
-
-
- 
 
 int main ()
 {
@@ -12,7 +15,6 @@ int main ()
   int count= 0;//count tells us how many registers we have
   int acc, pin;
   int i,j;
-  int decision;
    i=0;
    j=0;
   FILE *conf = fopen ("client.txt", "r");
@@ -20,22 +22,27 @@ int main ()
       printf ("no se pudo leer\n");
       exit (1);
   }
+ 
   while (action!= 5){//if action is 5 program will finish
       sw=0; swacc==0;
-      printf ("                   Hello welcome to the D&R ATM Bank  \n\n ");
-      printf ("Please enter your account number:   ");
+      printf ("\t---------------------------------------------------------------\n");
+      printf ("\t---------------------------------------------------------------\n");
+      printf ("\t             Hello welcome to the D&R ATM Bank                 \n");
+      printf ("\t---------------------------------------------------------------\n");
+      printf ("\t---------------------------------------------------------------\n");
+      printf ("Please enter your account number:");
       scanf("%d",&acc);//account storage
       while (!feof (conf)!=' '&&count<3&&sw==0){
         fscanf(conf,"%d %d %d",&seek.account[i], &seek.nip[i], &seek.status[i]);//with our struct we storage the file regiters
-        if(seek.account[i]==acc){
+        if(seek.account[i]==acc){//if we find the same account
             sw=1; 
             swacc=1;
-            printf("ingresa nip:");
+            printf("insert your NIP:");
             scanf("%d", &pin);
             if (pin==seek.nip[i]){//if our nip and account match
-                if (seek.status[i]==1){
+                if (seek.status[i]==1){//status is the one that tells us if our account is blocked or not
                     printf("\nWelcome\n");
-                    action=menu(); //we display the menu
+                    action=menu(); //we display the menu wich return us the action
                      if (action==1){
                          balance(acc);
                      }
@@ -46,7 +53,7 @@ int main ()
                         changepin(pin, acc);
                      }
                      if (action==4){
-                         deposite(acc);
+                         deposit(acc);
                      }
                      if (action==5){
                          printf("Bye have a nice day\n");
@@ -66,14 +73,16 @@ int main ()
      
         }
          if (swacc==0){
-            printf("Your account does not exit, try again\n");
+            printf("Your account does not exit, try again\n\n\n\n");
      
-      
+    
    
-  } 
+  }  
    rewind(conf);//to start since the beginig the file after we alredy complete an action
-    count=0;
-    }
+    count=0;//due to we rewind we need to initialized again count
+    
+    
+    } 
     
       fclose (conf);
 }
@@ -110,7 +119,7 @@ int main ()
         FILE*balance= fopen("amount.txt", "r");
         while (!feof (balance)!=' '&&count<=2)//count is the number of registers
         {  
-            fscanf(balance,"%d %d ",&view.account[i], &view.amount[i]);
+            fscanf(balance,"%d %d ",&view.account[i], &view.amount[i]); 
             if(view.account[i]==acc){
                   printf("The balance of %d is %d \n\n\n\n", view.account[i], view.amount[i]);
              }
@@ -168,9 +177,13 @@ int main ()
           while (!feof (read)!=' '&&count<=2){
             fscanf(read,"%d %d ",&view.account[i], &view.amount[i]);
             if(view.account[i]==acc){
-                view.amount[i]= view.amount[i]-amount;
+                if(view.amount[i]>amount){
+                    view.amount[i]= view.amount[i]-amount;//here we substract the amount from the account that withdrawal
                 
                 printf("%d you have withdrawal %d \n\n\n\n", view.account[i], amount);
+                }else{
+                    printf("You do not have the budget to withdrawal that amount of money\n");
+                }
             }
             
             
@@ -187,30 +200,38 @@ int main ()
         fclose(caught);
     }
         
-    void deposite(int acc){
+    void deposit(int acc){
         int count=0;
         int i,j, d;
         i=0;
         j=0;
         d=0;
+        
         int amount;
         int accgive;
         
         FILE* dep = fopen("amount.txt","r" ) ;
-        printf("How many money do you want to deposite?\n\n");
+        printf("How many money do you want to deposit?\n\n");
         scanf("%d", &amount);
         printf("To which account?:");
         scanf("%d", &accgive);
          while (!feof (dep)!=' '&&count<=2){
             fscanf(dep,"%d %d ",&view.account[i], &view.amount[i]);
             if(view.account[i]==acc){
-                view.amount[i]= view.amount[i]-amount;//the account who deposites is going to lose that amount
+                 if(view.amount[i]>amount){
+                      view.amount[i]= view.amount[i]-amount;//the account who deposit is going to lose that amount
+                 }else{
+                     printf("You do not have the budget to deposit this amount of money\n\n\n");
+                 }
             }
             if (view.account[d]==accgive){
-                view.amount[d]= view.amount[d]+amount;//to the account to which it was deposited that amount is going to be add
+               if(view.amount[i]>amount){
+                    view.amount[d]= view.amount[d]+amount;//the account to which it was deposited that amount is going to be add
+                    printf("Your deposit has been done\n\n\n\n");
+                 }
             }
-            i++;
-            d++;
+            i++;//counter i runs to search the account that is depositinng
+            d++;//counter d runs when we are searching for the account where we are going to deposit the amount
             count++;
            
          }
@@ -219,6 +240,6 @@ int main ()
         for(j=0; j<i&&j<d;j++){
         fprintf(operation,"%d %d \n", view.account[j], view.amount[j]);
         }
-        printf("Your deposite has been done\n\n\n\n");
         fclose(operation);
     }
+    
