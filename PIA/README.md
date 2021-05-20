@@ -6,7 +6,7 @@ the c language
 https://www.youtube.com/watch?v=B52MiyuHglA
 
 ### Link of gdb compiler
-https://onlinegdb.com/cSRE11w7Z
+https://onlinegdb.com/C4N8g84NU
 
 ## ATM FUNCTIONS
 This ATM Bank will count with the next functions
